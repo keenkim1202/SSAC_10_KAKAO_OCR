@@ -33,15 +33,26 @@ class OCRViewController: UIViewController {
   }
   
   // MARK: Action
+  
+  @IBAction func onImagePick(_ sender: UIButton) {
+    self.present(imagePicker, animated: true, completion: nil)
+  }
+  
   @IBAction func onRequest(_ sender: UIButton) {
+    progress.show(in: view, animated: true)
+    
     OCRAPIManager.shared.fetchOCRData(image: imageView.image!) { code, json in
-      print(json)
       switch code {
       case 200:
         
-        let age = json["result"]["faces"][0]["facial_attributes"]["age"].doubleValue
-        print("age: \(age)")
-        self.textView.text = "\(round(age))세로 추정됩니다."
+        var words: [String]  = []
+        let result = json["result"]
+        
+        result.forEach { r in
+          let recognizedWord = r.1["recognition_words"][0].stringValue
+          words.append(recognizedWord)
+        }
+        self.textView.text = words.joined(separator: "\n")
         self.progress.dismiss(animated: true)
         
       default:

@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt3-dt-jyC">
-                                <rect key="frame" x="20" y="447" width="374" height="50"/>
+                                <rect key="frame" x="20" y="498" width="374" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="MQU-LP-Wr7"/>
+                                    <constraint firstAttribute="height" constant="40" id="MQU-LP-Wr7"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -32,32 +32,50 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="검출된 단어 목록" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3DR-h9-JAF">
-                                <rect key="frame" x="20" y="517" width="374" height="325"/>
+                                <rect key="frame" x="20" y="558" width="374" height="284"/>
                                 <color key="backgroundColor" red="0.93849854193693394" green="0.96848052740097046" blue="0.78761021842332424" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testImage" translatesAutoresizingMaskIntoConstraints="NO" id="eIG-XR-SbU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text_image" translatesAutoresizingMaskIntoConstraints="NO" id="eIG-XR-SbU">
                                 <rect key="frame" x="20" y="44" width="374" height="374"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eIG-XR-SbU" secondAttribute="height" multiplier="1:1" id="1A1-p4-bni"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmd-rU-V6t">
+                                <rect key="frame" x="20" y="438" width="374" height="40"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JVB-Ae-nVj"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="사진 고르기">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onImagePick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HhZ-cK-dqC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Pt3-dt-jyC" firstAttribute="top" secondItem="Xmd-rU-V6t" secondAttribute="bottom" constant="20" id="3Mv-bK-YHB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xmd-rU-V6t" secondAttribute="trailing" constant="20" id="Bdv-Gf-mt0"/>
                             <constraint firstItem="eIG-XR-SbU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HVg-cE-YwJ"/>
                             <constraint firstItem="Pt3-dt-jyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IUW-kb-Rg3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pt3-dt-jyC" secondAttribute="trailing" constant="20" id="Mgl-pG-ydq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3DR-h9-JAF" secondAttribute="bottom" constant="20" id="MrD-8w-k7N"/>
                             <constraint firstItem="eIG-XR-SbU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PSf-tZ-mbp"/>
                             <constraint firstItem="3DR-h9-JAF" firstAttribute="top" secondItem="Pt3-dt-jyC" secondAttribute="bottom" constant="20" id="Q6g-yY-gH6"/>
+                            <constraint firstItem="Xmd-rU-V6t" firstAttribute="top" secondItem="eIG-XR-SbU" secondAttribute="bottom" constant="20" id="Qgh-sd-xbg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eIG-XR-SbU" secondAttribute="trailing" constant="20" id="RMc-cq-Zpk"/>
                             <constraint firstItem="3DR-h9-JAF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Sq7-Fc-r7t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3DR-h9-JAF" secondAttribute="trailing" constant="20" id="Vdb-qd-2fE"/>
-                            <constraint firstItem="Pt3-dt-jyC" firstAttribute="top" secondItem="eIG-XR-SbU" secondAttribute="bottom" constant="29" id="hMB-FB-Qk5"/>
+                            <constraint firstItem="Xmd-rU-V6t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Y6p-rp-EwD"/>
                         </constraints>
                     </view>
                     <connections>
@@ -71,7 +89,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="testImage" width="3333" height="5000"/>
+        <image name="text_image" width="1000" height="1080"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -80,6 +98,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
